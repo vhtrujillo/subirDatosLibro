@@ -21,21 +21,25 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  * Servlet implementation class CargaPermanente
  */
 @WebServlet("/CargaPermanente")
-public class CargaTemporal extends HttpServlet {
+public class CargaTemporal extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CargaTemporal() {
+    public CargaTemporal() 
+    {
         super();
+        
         // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
@@ -78,7 +82,9 @@ public class CargaTemporal extends HttpServlet {
 			}
 			
 			out.println("</table>");
-		} catch (FileUploadException e) {
+		} 
+		catch (FileUploadException e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -86,7 +92,8 @@ public class CargaTemporal extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

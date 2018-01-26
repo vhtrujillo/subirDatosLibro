@@ -39,7 +39,7 @@ public class FileUploadServlet extends HttpServlet
 			fileSaveDir.mkdirs();
 		}
 	
-		String datos = "", status = "";
+		 String datos = "";
 		System.out.println("Upload File Directory=" + fileSaveDir.getAbsolutePath());
 
 		String fileName = null;
@@ -48,22 +48,19 @@ public class FileUploadServlet extends HttpServlet
 		{
 			fileName = getFileName(part);
 			part.write(uploadFilePath + File.separator + fileName);
-            
-			for (int i = 0; i < c.titulo.length; i++)
+			String status="";
+			for(String a : c.datos)
 			{
-				System.out.println( ""+c.titulo[i]);
-				if (c.titulo[i] != fileName)
+			 System.out.println(a);
+				/*if (a != fileName)
 				{
+				
+					 status="--NO existe archivo en elxcel "+a;
 					
-					status = "--No existe archivo en elxcel";
-				} 
-				else
-				{
-					status = "--Si existe archivo en elxcel";
-				}
+				}*/
 			}
-			
 			datos = datos+ fileName + " " + status + "<br><br> <br>";
+			
 		}
 
 		request.setAttribute("message",
